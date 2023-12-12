@@ -39,7 +39,7 @@ public class SecurityZonePredicateUtil extends AbstractPredicateUtil {
         addPredicateForMatchingZoneId(filter.getParam(SearchFilter.ZONE_ID), predicates);
         addPredicateForMatchingZoneName(filter.getParam(SearchFilter.ZONE_NAME), predicates);
         addPredicateForNonMatchingZoneName(filter.getParam(SearchFilter.NOT_ZONE_NAME), predicates);
-		addPredicateForMatchingZoneNamePartial(filter.getParam(SearchFilter.ZONE_NAME_PARTIAL), predicates);
+	    addPredicateForMatchingZoneNamePartial(filter.getParam(SearchFilter.ZONE_NAME_PARTIAL), predicates);
     }
 
     private Predicate addPredicateForServiceName(final String serviceName, List<Predicate> predicates) {
@@ -189,9 +189,9 @@ public class SecurityZonePredicateUtil extends AbstractPredicateUtil {
 				if (object instanceof RangerSecurityZone) {
 					RangerSecurityZone securityZone = (RangerSecurityZone) object;
 
-					if (StringUtils.contains(securityZone.getName(), zoneName)) {
-						ret = true;
-					}
+					if (!StringUtils.equals(zoneName, securityZone.getName())) {
+                        ret = true;
+                    }
 				}
 
 				return ret;

@@ -277,7 +277,7 @@
                 <module>agents-installer</module>
                 <module>credentialbuilder</module>
                 <module>embeddedwebserver</module>
-		<module>ranger-common-ha</module>
+		        <module>ranger-common-ha</module>
                 <module>kms</module>
                 <module>hbase-agent</module>
                 <module>hdfs-agent</module>
@@ -647,6 +647,7 @@
                 <module>ranger-util</module>
                 <module>plugin-trino</module>
                 <module>ranger-trino-plugin-shim</module>
+                <module>distro</module>
             </modules>
         </profile>
         <profile>

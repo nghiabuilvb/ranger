@@ -317,7 +317,7 @@ public class RangerSystemAccessControl
   public void checkCanShowRoleGrants(SystemSecurityContext context) {
     //allow
   }
-
+  
   @Override
   public boolean canAccessCatalog(SystemSecurityContext context, String catalogName) {
     return hasPermission(createResource(catalogName), context, TrinoAccessType.USE);

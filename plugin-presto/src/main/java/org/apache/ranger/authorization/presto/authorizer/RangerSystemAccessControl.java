@@ -304,13 +304,7 @@ public class RangerSystemAccessControl
   }
 
 
-  @Override
-  public void checkCanAccessCatalog(SystemSecurityContext context, String catalogName) {
-    if (!hasPermission(createResource(catalogName), context, PrestoAccessType.USE)) {
-      LOG.debug("RangerSystemAccessControl.checkCanAccessCatalog(" + catalogName + ") denied");
-      AccessDeniedException.denyCatalogAccess(catalogName);
-    }
-  }
+  
 
   @Override
   public void checkCanShowSchemas(SystemSecurityContext context, String catalogName) {

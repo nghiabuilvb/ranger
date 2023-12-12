@@ -82,15 +82,7 @@ public class RangerSystemAccessControl
     }
   }
 
-  @Override
-  public void checkCanAccessCatalog(SystemSecurityContext context, String catalogName) {
-    try {
-      activatePluginClassLoader();
-      systemAccessControlImpl.checkCanAccessCatalog(context, catalogName);
-    } finally {
-      deactivatePluginClassLoader();
-    }
-  }
+  
 
   @Override
   public Set<String> filterCatalogs(SystemSecurityContext context, Set<String> catalogs) {
